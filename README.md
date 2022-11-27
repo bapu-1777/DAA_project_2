@@ -12,10 +12,18 @@ An example of a subsequence is a sequence that can be derived from another seque
 In order to find the longest common subsequence (LCS) between two sequences, we have to find a subsequence with a maximum length, that is common to both sequences. As an example, if two strings "ace" and "abcde" are given, the longest common subsequence is 3, which is "ace".
 
 
-## Python Library
+## logic
 
+As an example, let's find the longest common subsequence between the strings "abc" and "cab".
 
+Approach: Start filling each row of the dpTable and fill all the columns in one row before moving to the next row. This solves sub-problems that help arrive at the results of the actual problem.
 
+The longest common subsequence is 0, because if either of the two strings is empty, they may have nothing in common. So in the dpTable all the values ​​in the first row and first column are 0.
+
+When filling a cell dpTable[i][j] there are two cases
+
+str1[i] == str2[j] where dpTable[i][j] = dpTable[i - 1] [ j - 1] + 1
+str1[i] != str2[j], where dpTable[i][j] = Math.max(dpTable[i - 1][j], dpTable[i][j - 1]))
 
 ## Deployment
 
